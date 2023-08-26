@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <script src="calculator.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="style_calculator.css" rel="stylesheet" type="text/css">
+    <style>
+       #calculator {
+            margin: 20px;
+        }
+
+        #result {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator" class="container">
+        <input type="text" id="result" readonly class="form-control">
+        <div class="row">
+            
+            <button onclick="appendValue('7')" class="btn btn-primary">7</button>
+            <button onclick="appendValue('8')" class="btn btn-primary">8</button>
+            <button onclick="appendValue('9')" class="btn btn-primary">9</button>
+            <button onclick="performOperation('+')" class="btn btn-info">+</button>
+        </div>
+
+        <div class="row">
+            <button onclick="appendValue('4')" class="btn btn-primary">4</button>
+            <button onclick="appendValue('5')" class="btn btn-primary">5</button>
+            <button onclick="appendValue('6')" class="btn btn-primary">6</button>
+            <button onclick="performOperation('-')" class="btn btn-info">-</button>
+        </div>
+
+        <div class="row">
+            <button onclick="appendValue('1')" class="btn btn-primary">1</button>
+            <button onclick="appendValue('2')" class="btn btn-primary">2</button>
+            <button onclick="appendValue('3')" class="btn btn-primary">3</button>
+            <button onclick="performOperation('*')" class="btn btn-info">*</button>
+        </div>
+
+        <div class="row">
+            <button onclick="appendValue('0')" class="btn btn-primary">0</button>
+            <button onclick="appendValue('.')" class="btn btn-primary">.</button>
+            <button onclick="performOperation('/')" class="btn btn-info">/</button>
+            <button onclick="performOperation('%')" class="btn btn-info">%</button>
+        </div>
+
+        <div class="row">
+            <button onclick="clearResult()" class="btn btn-danger">AC</button>
+            <button onclick="calculate()" class="btn btn-success">=</button>
+        </div>
+    </div>
+    <button onclick="calculate()">Calculate</button>
+
+    <input type="number" id="num1" placeholder="Enter num1">
+    <input type="number" id="num2" placeholder="Enter num2">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+
+    <div id="result"></div>
+
+    <script>
+       function clearResult() {
+            document.getElementById("result").value = "";
+        }
+
+        function appendValue(value) {
+            document.getElementById("result").value += value;
+        }
+
+        function performOperation(operator) {
+            document.getElementById("result").value += operator;
+        }
+
+        function calculate() {
+            let expression = document.getElementById("result").value;
+            let result = eval(expression);
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+</html>

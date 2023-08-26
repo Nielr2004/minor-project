@@ -1,0 +1,80 @@
+
+
+body {
+    background-color: #000; /* Set the background color of the body */
+}
+
+#calculator {
+    background-color: #222; /* Set the background color of the calculator */
+    border-radius: 10px; /* Add rounded corners to the calculator */
+    padding: 20px; /* Add padding around the calculator */
+    margin: 20px; /* Add margin around the calculator */
+    width: 250px; /* Set the width of the calculator */
+}
+
+.btn {
+    position: relative; /* Enable relative positioning for the buttons */
+    overflow: hidden; /* Hide any content overflowing from the buttons */
+    border: none; /* Remove borders from the buttons */
+    border-radius: 50%; /* Add rounded corners to the buttons */
+    font-size: 20px; /* Set the font size of the buttons */
+    margin: 5px; /* Add margin around the buttons */
+    padding: 0; /* Remove padding from the buttons */
+    width: 50px; /* Set the width of the buttons */
+    height: 50px; /* Set the height of the buttons */
+    color: #fff; /* Set the text color of the buttons */
+    background-color: lightgrey; /* Set the background color of the buttons to light grey */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add a box shadow to the buttons */
+}
+
+.btn:before {
+    content: ''; /* Add content to the pseudo-element */
+    position: absolute; /* Enable absolute positioning for the pseudo-element */
+    top: 50%; /* Position the pseudo-element vertically at 50% */
+    left: 50%; /* Position the pseudo-element horizontally at 50% */
+    transform: translate(-50%, -50%); /* Center the pseudo-element */
+    width: 0; /* Set the initial width of the pseudo-element to 0 */
+    height: 0; /* Set the initial height of the pseudo-element to 0 */
+    z-index: 1; /* Set the z-index of the pseudo-element */
+    transition: width 0.3s, height 0.3s; /* Add transition effects to the pseudo-element */
+    border-radius: 50%; /* Add rounded corners to the pseudo-element */
+}
+
+.btn:hover:before,
+.btn:focus:before {
+    width: 200%; /* Set the width of the pseudo-element to 200% on hover or focus */
+    height: 200%; /* Set the height of the pseudo-element to 200% on hover or focus */
+    box-shadow: 0 0 10px 10px rgba(0, 123, 255, 0.5), 0 0 20px 20px rgba(0, 123, 255, 0.3), 0 0 30px 30px rgba(0, 123, 255, 0.1); /* Add a box shadow to the pseudo-element on hover or focus */
+}
+
+.btn-success {
+    background-color: #515652; /* Set the background color of the success button */
+}
+
+.btn-info {
+    background-color: #515652; /* Set the background color of the info button */
+}
+
+.btn-primary {
+    background-color: #515652; /* Set the background color of the primary button */
+}
+
+.btn-danger {
+    background-color: #515652; /* Set the background color of the danger button */
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #515652;/* Set the background color of the primary button on hover or focus */
+
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color:  #515652;
+}
+button:active {
+    animation: none;
+}
+
+
